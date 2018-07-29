@@ -24,7 +24,8 @@ I saved the database schema under `src/lib/Schema.js`. The code is as follows:
     }
   },
   required: ['message']
-}```
+}
+```
 
 In the above schema:
 
@@ -34,10 +35,14 @@ In the above schema:
 4. You can learn more about schemas [here](https://pubkey.github.io/rxdb/RxSchema.html).
 
 ## Configuring the local database
+
 This should be in `App.js`:
-```import * as RxDB from 'rxdb';
+
+```
+import * as RxDB from 'rxdb';
 import { QueryChangeDetector } from 'rxdb';
-import { schema } from './Schema';```
+import { schema } from './Schema';
+```
 
 In addition to importing the main RxDB module and the schema created in the previous section, we’re importing the module `QueryChangeDetector`.
 
@@ -45,5 +50,7 @@ As RxDB is a reactive database, you can subscribe to queries to receive new resu
 
 This option is currently in beta and disabled by default, but we can enable it with the following code:
 
-```QueryChangeDetector.enable();
-QueryChangeDetector.enableDebugging();```
+```
+QueryChangeDetector.enable();
+QueryChangeDetector.enableDebugging();
+```
